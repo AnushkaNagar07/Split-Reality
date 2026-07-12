@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Split Reality — every version of your moment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="brand">
+      <span class="brand-mark">◆</span> SPLIT REALITY
+    </span>
+    <span class="tag">one moment. every timeline.</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="hero">
+    <h1 class="hero-title">
+      <span class="line" id="glitchTitle">What if it went differently?</span>
+    </h1>
+    <p class="hero-sub">Type a real moment — a message you sent, a decision, a coin flip. We'll fracture it into the timelines it could have become.</p>
+
+    <form id="splitForm" class="split-form" autocomplete="off">
+      <div class="input-shell">
+        <span class="input-caret">&gt;</span>
+        <input
+          type="text"
+          id="momentInput"
+          maxlength="220"
+          placeholder="I proposed to my crush and got rejected"
+          required
+        />
+      </div>
+      <button type="submit" id="splitBtn" class="split-btn">
+        <span class="btn-label">Split it</span>
+      </button>
+    </form>
+
+    <div class="examples">
+      <span class="examples-label">Try:</span>
+      <button class="chip" data-example="I proposed to my crush and got rejected">crush rejection</button>
+      <button class="chip" data-example="If Ronaldo wins the World Cup">Ronaldo × World Cup</button>
+      <button class="chip" data-example="I quit my stable job to freelance">quit my job</button>
+      <button class="chip" data-example="I stayed silent instead of speaking up in the meeting">stayed silent</button>
+    </div>
+  </section>
+
+  <div class="fracture-line" id="fractureLine" aria-hidden="true">
+    <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+      <path d="M0,10 L38,10 L44,2 L50,18 L56,4 L62,10 L100,10" />
+    </svg>
+  </div>
+
+  <section class="results" id="results" hidden>
+    <p class="results-label" id="resultsLabel"></p>
+    <div class="reality-grid" id="realityGrid"></div>
+  </section>
+
+  <section class="state state-loading" id="loadingState" hidden>
+    <div class="spinner" aria-hidden="true"></div>
+    <p id="loadingText">Fracturing timeline…</p>
+  </section>
+
+  <section class="state state-error" id="errorState" hidden>
+    <p id="errorText"></p>
+    <button class="chip" id="errorRetry">Try again</button>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>Built at a hackathon, powered by Claude.</span>
+</footer>
+
+<template id="realityCardTemplate">
+  <article class="reality-card">
+    <div class="card-top">
+      <span class="universe-tag"></span>
+      <button class="reroll-btn" title="Get a different version of this timeline">
+        <span class="reroll-icon">↻</span>
+      </button>
+    </div>
+    <h3 class="reality-title"></h3>
+    <p class="reality-story"></p>
+  </article>
+</template>
+
+<script src="script.js"></script>
+</body>
+</html>

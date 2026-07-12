@@ -1,0 +1,19 @@
+{
+  "name": "split-reality",
+  "version": "1.0.0",
+  "description": "Type a moment. See every timeline it could have become.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
